@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="JP Salon — Lakme Professional Unisex salon in Shahadatpura, Mau, Uttar Pradesh.">
+  <title>JP Salon | Lakme Professional Unisex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#0c0c0d; --soft:#151517; --gold:#d8b66a; --gold2:#f2d998;
+      --cream:#f7f3ea; --muted:#aaa9a6; --white:#fff; --line:rgba(255,255,255,.11);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,92%);margin:auto}
+    .gold{color:var(--gold)}
+    .serif{font-family:"Playfair Display",serif}
+    header{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(10,10,11,.76);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.08em}
+    .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid rgba(216,182,106,.45)}
+    .brand span{font-size:16px}
+    .navlinks{display:flex;gap:28px;color:#d8d8d8;font-size:14px}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-cta{border:1px solid var(--gold);padding:10px 17px;border-radius:30px;color:var(--gold);font-size:13px;font-weight:700}
+    .hero{min-height:100vh;padding-top:76px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.65) 48%,rgba(0,0,0,.22) 100%),
+      url("images/salon-interior.png") center/cover no-repeat;filter:saturate(.8)}
+    .hero:after{content:"";position:absolute;width:560px;height:560px;right:-180px;top:80px;background:radial-gradient(circle,rgba(216,182,106,.18),transparent 65%);pointer-events:none}
+    .hero-content{position:relative;z-index:2;width:min(1160px,92%);margin:auto;padding:90px 0}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--gold);font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px}
+    .eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(52px,8vw,102px);line-height:.95;max-width:800px;font-weight:600}
+    .hero p{max-width:610px;color:#d2d0cc;font-size:18px;margin:28px 0 34px}
+    .actions{display:flex;flex-wrap:wrap;gap:13px}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 22px;border-radius:5px;font-weight:700;font-size:14px;transition:.2s}
+    .btn-gold{background:var(--gold);color:#17130b}
+    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+    .btn-outline{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .rating{display:flex;align-items:center;gap:10px;margin-top:24px;color:#c8c8c8;font-size:14px}
+    .stars{color:#f2bd42;letter-spacing:2px}
+    section{padding:100px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:40px}
+    .kicker{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(34px,5vw,58px);line-height:1.05;margin-top:9px}
+    .section-head p{max-width:450px;color:var(--muted)}
+    .about{background:var(--cream);color:#171717}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about .kicker{color:#9d7932}
+    .about p{color:#5e5b56;margin:18px 0}
+    .about-card{position:relative}
+    .about-card img{height:570px;width:100%;object-fit:cover;border-radius:3px}
+    .badge{position:absolute;right:-18px;bottom:24px;background:#111;color:#fff;padding:22px 24px;border:1px solid var(--gold);box-shadow:0 15px 45px rgba(0,0,0,.25)}
+    .badge strong{display:block;font-family:"Playfair Display",serif;font-size:28px;color:var(--gold)}
+    .services{background:#111113}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .service{border:1px solid var(--line);background:#161618;padding:30px 24px;min-height:200px;transition:.25s}
+    .service:hover{transform:translateY(-5px);border-color:rgba(216,182,106,.6)}
+    .service .num{font-size:12px;color:var(--gold);letter-spacing:.12em}
+    .service h3{font-family:"Playfair Display",serif;font-size:25px;margin:30px 0 9px}
+    .service p{color:var(--muted);font-size:14px}
+    .gallery{background:#0b0b0c}
+    .gallery-grid{display:grid;grid-template-columns:1.05fr .95fr .95fr;grid-template-rows:270px 270px;gap:12px}
+    .gallery-item{overflow:hidden;position:relative;background:#171717}
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .gallery-item:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.6))}
+    .gallery-label{position:absolute;z-index:2;left:18px;bottom:15px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .visit{background:var(--cream);color:#171717}
+    .visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px}
+    .info{display:grid;gap:18px;margin-top:28px}
+    .info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid #ddd6ca}
+    .icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#171717;color:var(--gold);font-weight:700;flex:none}
+    .info small{display:block;color:#777;text-transform:uppercase;letter-spacing:.12em;font-size:10px;margin-bottom:3px}
+    .info strong{font-size:16px}
+    .map-card{background:#111;color:#fff;min-height:390px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .map-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(216,182,106,.16),transparent 55%)}
+    .map-card>*{position:relative}
+    .map-title{font-family:"Playfair Display",serif;font-size:38px}
+    footer{padding:34px 0;border-top:1px solid var(--line);background:#090909;color:#8f8f8f;font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{color:#fff;font-family:"Playfair Display",serif;font-size:20px}
+    .mobile-call{display:none}
+    .enquiry{background:#171719;padding:105px 0}
+    .enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+    .enquiry-copy .kicker{color:#ef4937}
+    .enquiry-copy h2{font-family:"DM Sans",sans-serif;font-size:clamp(50px,6vw,82px);font-weight:800;line-height:.92;letter-spacing:-.04em;margin-top:10px}
+    .enquiry-copy h2 span{color:#ef4937}
+    .enquiry-copy p{color:#96959a;max-width:530px;margin-top:22px;font-size:15px}
+    .enquiry-form{display:grid;gap:9px}
+    .enquiry-form label{font-size:12px;color:#aaaab0;text-transform:uppercase;letter-spacing:.11em;margin-top:2px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;background:#222224;border:1px solid #39393d;color:#fff;padding:16px 17px;font:inherit;outline:none;border-radius:0}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{border-color:#ef4937}
+    .enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:#77777c}
+    .enquiry-form select{appearance:auto}
+    .enquiry-form textarea{min-height:84px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:19px;margin-top:7px}
+    .form-row>div{display:grid;gap:9px}
+    .whatsapp-btn{border:0;background:#ef4937;color:#fff;padding:18px 20px;margin-top:10px;font-weight:800;letter-spacing:.1em;cursor:pointer;font-size:13px}
+    .whatsapp-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+    @media(max-width:900px){
+
+      .enquiry-grid{grid-template-columns:1fr;gap:45px}
+      .enquiry{padding:75px 0}
+      .form-row{grid-template-columns:1fr}
+
+      .navlinks{display:none}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .about-grid,.visit-grid{grid-template-columns:1fr}
+      .about-card img{height:470px}
+      .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:280px 220px 220px}
+      .gallery-item:first-child{grid-row:span 2}
+      .section-head{display:block}
+      .section-head p{margin-top:15px}
+    }
+    @media(max-width:560px){
+      nav{height:68px}.brand img{width:40px;height:40px}.brand span{font-size:13px}
+      .nav-cta{display:none}
+      .hero{padding-top:68px}
+      .hero-content{padding:60px 0 100px}
+      .hero p{font-size:16px}
+      section{padding:75px 0}
+      .service-grid{grid-template-columns:1fr}
+      .gallery-grid{display:grid;grid-template-columns:1fr;grid-template-rows:330px 230px 230px}
+      .gallery-item:first-child{grid-row:span 1}
+      .about-card img{height:390px}
+      .badge{right:12px}
+      .footer-row{display:block}
+      .footer-row div+div{margin-top:8px}
+      .mobile-call{display:inline-flex}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="brand" href="#home">
+      <img src="images/logo.png" alt="JP Salon logo">
+      <span>JP SALON <small class="gold">• LAKME PROFESSIONAL</small></span>
+    </a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
+    </div>
+    <a class="nav-cta" href="tel:08808534033">CALL NOW</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Lakme Professional • Unisex</div>
+      <h1>Style that feels <span class="gold">personal.</span></h1>
+      <p>Welcome to <strong>JP Salon</strong> — a professional unisex beauty salon in Shahadatpura, Mau, created for polished hair, beauty and grooming experiences.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="tel:08808534033">☎ Call Now</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JP+Salon%2C+Krishna+Market%2C+Shahadatpura%2C+Mau%2C+Uttar+Pradesh+275101">↗ Get Directions</a>
+        <a class="btn btn-outline mobile-call" href="sms:08808534033">✉ Message</a>
+      </div>
+      <div class="rating"><span class="stars">★★★★★</span><strong>4.8</strong><span>Google rating • 144 reviews</span></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <div class="kicker">The Salon</div>
+        <h2>Professional care.<br><em>Modern style.</em></h2>
+        <p>JP Salon is presented as a Lakme Professional Unisex salon, bringing together a modern salon environment and beauty-focused services under one roof.</p>
+        <p>From grooming and hair styling to beauty treatments, the space is designed for clients who want a clean, comfortable and polished salon experience.</p>
+        <a class="btn" style="background:#111;color:#fff;margin-top:10px" href="#gallery">Explore the gallery →</a>
+      </div>
+      <div class="about-card">
+        <img src="images/salon-interior.png" alt="JP Salon interior">
+        <div class="badge"><strong>JP SALON</strong>LAKME PROFESSIONAL<br>UNISEX</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">What we do</div><h2>Beauty & Grooming</h2></div>
+        <p>Service categories are kept simple so the salon can update exact offerings and pricing later without changing the design.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><div class="num">01 / HAIR</div><h3>Hair Styling</h3><p>Contemporary cuts, styling and salon-finish looks.</p></article>
+        <article class="service"><div class="num">02 / BEAUTY</div><h3>Facial & Care</h3><p>Beauty-focused facial and skin-care experiences.</p></article>
+        <article class="service"><div class="num">03 / OCCASION</div><h3>Hair Art</h3><p>Elegant hair arrangements and occasion-ready styling.</p></article>
+        <article class="service"><div class="num">04 / GROOMING</div><h3>Unisex Grooming</h3><p>Professional grooming in a comfortable salon setting.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Inside JP Salon</div><h2>Real salon moments.</h2></div>
+        <p>Photos supplied for the salon website. Replace them anytime by keeping the same filenames in the <code>images</code> folder.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/salon-facial.png" alt="Facial treatment at JP Salon"><div class="gallery-label">Beauty Treatment</div></div>
+        <div class="gallery-item"><img src="images/hair-art.png" alt="Hair styling with flowers"><div class="gallery-label">Hair Styling</div></div>
+        <div class="gallery-item"><img src="images/salon-interior.png" alt="JP Salon interior"><div class="gallery-label">Salon Interior</div></div>
+        <div class="gallery-item"><img src="images/logo.png" alt="JP Salon logo"><div class="gallery-label">JP Salon</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enquiry" id="enquiry">
+    <div class="container enquiry-grid">
+      <div class="enquiry-copy">
+        <div class="kicker">05 / ENQUIRY</div>
+        <h2>READY FOR<br><span>A FRESH LOOK?</span></h2>
+        <p>Submit your details. The button opens WhatsApp with your enquiry so the salon can confirm availability.</p>
+      </div>
+      <form class="enquiry-form" id="enquiryForm">
+        <label>Your Name</label>
+        <input id="customerName" type="text" placeholder="Enter your name" required>
+
+        <label>Phone Number</label>
+        <input id="customerPhone" type="tel" placeholder="Enter phone number" required>
+
+        <div class="form-row">
+          <div>
+            <label>Preferred Date</label>
+            <input id="customerDate" type="date" required>
+          </div>
+          <div>
+            <label>Service</label>
+            <select id="customerService">
+              <option>Haircut</option>
+              <option>Hair Styling</option>
+              <option>Facial & Care</option>
+              <option>Hair Art</option>
+              <option>Unisex Grooming</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Message</label>
+        <textarea id="customerMessage" placeholder="Any special request?"></textarea>
+
+        <button class="whatsapp-btn" type="submit">SEND ON WHATSAPP ↗</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="container visit-grid">
+      <div>
+        <div class="kicker">Find us</div>
+        <h2>Come in &<br>feel the difference.</h2>
+        <div class="info">
+          <div class="info-row"><div class="icon">⌖</div><div><small>Address</small><strong>Krishna Market, Opp. Swadeshi Cotton Mill,<br>Shahadatpura, Mau, Uttar Pradesh 275101</strong></div></div>
+          <div class="info-row"><div class="icon">☎</div><div><small>Phone</small><strong><a href="tel:08808534033">088085 34033</a></strong></div></div>
+          <div class="info-row"><div class="icon">◷</div><div><small>Hours</small><strong>Open • Closes 9 PM</strong></div></div>
+        </div>
+      </div>
+      <div class="map-card">
+        <div><div class="kicker">Shahadatpura • Mau</div><div class="map-title">Your next<br>look starts here.</div></div>
+        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JP+Salon%2C+Krishna+Market%2C+Shahadatpura%2C+Mau%2C+Uttar+Pradesh+275101">Open in Google Maps ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">JP SALON</div>
+    <div>LAKME PROFESSIONAL • UNISEX</div>
+    <div>© <span id="year"></span> JP Salon</div>
+  </div>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  document.getElementById("enquiryForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const date = document.getElementById("customerDate").value;
+    const service = document.getElementById("customerService").value;
+    const message = document.getElementById("customerMessage").value.trim();
+
+    const formattedDate = date ? date.split("-").reverse().join("/") : "";
+    const text =
+      "Hello JP Salon!%0A%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Phone: " + encodeURIComponent(phone) + "%0A" +
+      "Preferred Date: " + encodeURIComponent(formattedDate) + "%0A" +
+      "Service: " + encodeURIComponent(service) + "%0A" +
+      "Message: " + encodeURIComponent(message || "No special request.");
+
+    window.open("https://wa.me/918808534033?text=" + text, "_blank");
+  });
+</script>
+
+</body>
+</html>
